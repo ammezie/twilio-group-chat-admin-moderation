@@ -6,6 +6,7 @@
                     <div class="card-header">Members</div>
 
                     <div class="card-body">
+                        <!-- Members list goes here -->
                     </div>
                 </div>
             </div>
