@@ -14,26 +14,28 @@
                             >
                                 {{ mem.identity }}
 
-                                <button
-                                    type="button"
-                                    class="btn btn-primary btn-sm"
-                                    @click="removeMember(mem.identity)"
-                                    v-if="member.roleSid === adminRoleSid && user.username !== mem.identity"
-                                >Remove</button>
+                                <div class="btn-group">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary btn-sm"
+                                        @click="removeMember(mem.identity)"
+                                        v-if="member.roleSid === adminRoleSid && user.username !== mem.identity"
+                                    >Remove</button>
 
-                                <button
-                                    type="button"
-                                    class="btn btn-primary btn-sm"
-                                    @click="banMember(mem.identity)"
-                                    v-if="member.roleSid === adminRoleSid && mem.roleSid === memberRoleSid && user.username !== mem.identity"
-                                >Ban</button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary btn-sm"
+                                        @click="banMember(mem.identity)"
+                                        v-if="member.roleSid === adminRoleSid && mem.roleSid === memberRoleSid && user.username !== mem.identity"
+                                    >Ban</button>
 
-                                <button
-                                    type="button"
-                                    class="btn btn-primary btn-sm"
-                                    @click="unbanMember(mem.identity)"
-                                    v-if="member.roleSid === adminRoleSid && mem.roleSid === bannedRoleSid && user.username !== mem.identity"
-                                >Unban</button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary btn-sm"
+                                        @click="unbanMember(mem.identity)"
+                                        v-if="member.roleSid === adminRoleSid && mem.roleSid === bannedRoleSid && user.username !== mem.identity"
+                                    >Unban</button>
+                                </div>
                             </li>
                         </ul>
                         <p v-else>No members</p>
@@ -42,7 +44,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ channel.uniqueName }}</div>
+                    <div class="card-header">{{ channel.friendlyName }}</div>
 
                     <div class="card-body">
                         <div v-for="message in messages" :key="message.id">

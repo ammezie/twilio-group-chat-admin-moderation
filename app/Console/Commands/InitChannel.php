@@ -40,8 +40,8 @@ class InitChannel extends Command
     public function handle()
     {
         $user = User::create([
-            'username' => 'admin',
-            'email' => 'admin@example.com',
+            'username' => 'mezie',
+            'email' => 'chimezie@adonismastery.com',
             'password' => bcrypt('password')
         ]);
 

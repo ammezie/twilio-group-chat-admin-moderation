@@ -2002,6 +2002,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ChatRoom",
   props: {
@@ -38403,58 +38405,60 @@ var render = function() {
                             _vm._s(mem.identity) +
                             "\n\n                            "
                         ),
-                        _vm.member.roleSid === _vm.adminRoleSid &&
-                        _vm.user.username !== mem.identity
-                          ? _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary btn-sm",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.removeMember(mem.identity)
+                        _c("div", { staticClass: "btn-group" }, [
+                          _vm.member.roleSid === _vm.adminRoleSid &&
+                          _vm.user.username !== mem.identity
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary btn-sm",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.removeMember(mem.identity)
+                                    }
                                   }
-                                }
-                              },
-                              [_vm._v("Remove")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.member.roleSid === _vm.adminRoleSid &&
-                        mem.roleSid === _vm.memberRoleSid &&
-                        _vm.user.username !== mem.identity
-                          ? _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary btn-sm",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.banMember(mem.identity)
+                                },
+                                [_vm._v("Remove")]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.member.roleSid === _vm.adminRoleSid &&
+                          mem.roleSid === _vm.memberRoleSid &&
+                          _vm.user.username !== mem.identity
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary btn-sm",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.banMember(mem.identity)
+                                    }
                                   }
-                                }
-                              },
-                              [_vm._v("Ban")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.member.roleSid === _vm.adminRoleSid &&
-                        mem.roleSid === _vm.bannedRoleSid &&
-                        _vm.user.username !== mem.identity
-                          ? _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary btn-sm",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.unbanMember(mem.identity)
+                                },
+                                [_vm._v("Ban")]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.member.roleSid === _vm.adminRoleSid &&
+                          mem.roleSid === _vm.bannedRoleSid &&
+                          _vm.user.username !== mem.identity
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary btn-sm",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.unbanMember(mem.identity)
+                                    }
                                   }
-                                }
-                              },
-                              [_vm._v("Unban")]
-                            )
-                          : _vm._e()
+                                },
+                                [_vm._v("Unban")]
+                              )
+                            : _vm._e()
+                        ])
                       ]
                     )
                   }),
@@ -38468,7 +38472,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v(_vm._s(_vm.channel.uniqueName))
+            _vm._v(_vm._s(_vm.channel.friendlyName))
           ]),
           _vm._v(" "),
           _c(
