@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/token', 'TokenController@generate');
-Route::post('/members/{username}/ban', 'MemberController@ban');
-Route::post('/members/{username}/unban', 'MemberController@unban');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
